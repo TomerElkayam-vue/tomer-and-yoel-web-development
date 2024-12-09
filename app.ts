@@ -1,13 +1,22 @@
+import { authenticateToken } from "./middlewares/auth_middleware";
+import { swaggerOptions } from "./swagger/swagger_setup";
+
 const dotenv = require("dotenv");
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-<<<<<<< HEAD:app.ts
-=======
+const swaggerJsdoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
 
->>>>>>> b28d870d693c4775fda77370be306a88fc704fea:app.js
 dotenv.config();
 const app = express();
+
+const specs = swaggerJsdoc(swaggerOptions);
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(specs, { explorer: true })
+);
 
 mongoose.connect(process.env.DB_CONNECT);
 const db = mongoose.connection;
@@ -16,11 +25,15 @@ db.once("open", () => console.log("Connected to database successfuly"));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(authenticateToken);
+
+const authRouter = require("./routes/auth_route");
+
+app.use("/auth", authRouter);
 
 const postsRouter = require("./routes/posts_route");
 
 app.use("/posts", postsRouter);
-
 
 const commentsRouter = require("./routes/comments_route");
 
