@@ -5,11 +5,11 @@ GET http://localhost:3000/posts
 
 ###
 
-GET http://localhost:3000/posts?postOwner=tomer
+GET http://localhost:3000/posts?postOwner=675063ff82f983bbbce757e8
 
 ###
 
-GET http://localhost:3000/posts/674088366365996d79acfdd2
+# GET http://localhost:3000/posts/674088366365996d79acfdd2
 
 ###
 
@@ -17,19 +17,19 @@ POST http://localhost:3000/posts
 Content-Type: application/json
 
 {
-    "title": "Amazing Post",
-    "owner": "tomer",
+    "title": "Amazing Post here",
+    "owner": "675063ff82f983bbbce757e8",
     "content": "It will surely work"
 }
 
-###
+##
 
 PUT http://localhost:3000/posts/674088366365996d79acfdd2
 Content-Type: application/json
 
 {
     "title": "New and amazing post",
-    "owner": "tomer",
+    "owner": "tomer22",
     "content": "Very good job"
 }
 
@@ -55,7 +55,7 @@ POST http://localhost:3000/comments
 Content-Type: application/json
 
 {
-    "user": "yoel",
+    "user": "yoel2",
     "content": "bla bla bla",
     "postId": "674088366365996d79acfdd2"
 }
@@ -66,5 +66,35 @@ PUT http://localhost:3000/comments/6740902515e5bdf0e3363dcb
 Content-Type: application/json
 
 {
-    "content": "content post updating"
+    "content": "content post updating now"
+}
+
+###
+
+GET http://localhost:3000/users
+
+###
+
+GET http://localhost:3000/users/675063ff82f983bbbce757e8
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "username": "tomerelk",
+    "password": "123imking",
+    "email": "tomerelkm@gmail.com"
+}
+
+###
+
+PUT http://localhost:3000/users/675063b982f983bbbce757e3
+Content-Type: application/json
+
+{
+    "username": "tomerelk",
+    "password": "123imking2",
+    "email": "tomerelkm@gmail.com"
 }
