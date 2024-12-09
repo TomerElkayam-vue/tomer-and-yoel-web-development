@@ -106,9 +106,9 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "username": "ronaruch",
+    "username": "joel",
     "password": "12345",
-    "email": "ron123@gmail.com"
+    "email": "joel123@gmail.com"
 }
 
 ###
@@ -120,7 +120,7 @@ Content-Type: application/json
 
 {
     "password": "12345",
-    "email": "ron123@gmail.com"
+    "email": "joel123@gmail.com"
 }
 
 ###
