@@ -1,3 +1,3 @@
-# express-mongo-tomer-and-yoel
+# tomer-and-yoel-web-development
 
 An express mongo app
