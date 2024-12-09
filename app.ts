@@ -2,6 +2,10 @@ const dotenv = require("dotenv");
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+<<<<<<< HEAD:app.ts
+=======
+
+>>>>>>> b28d870d693c4775fda77370be306a88fc704fea:app.js
 dotenv.config();
 const app = express();
 
@@ -16,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const postsRouter = require("./routes/posts_route");
 
 app.use("/posts", postsRouter);
+
 
 const commentsRouter = require("./routes/comments_route");
 
