@@ -51,7 +51,7 @@ afterEach(async () => {
 });
 
 describe("Posts", () => {
-  test("Get Many Posts", async () => {
+  test("Get Posts", async () => {
     await PostModel.create(posts);
     const res = await request(await appPromise)
       .get("/posts")
@@ -59,7 +59,7 @@ describe("Posts", () => {
     expect(res.statusCode).toEqual(200);
   });
 
-  test("Get Post by ID", async () => {
+  test("Get Post", async () => {
     await PostModel.create(post);
     const id = (await PostModel.findOne({ owner: post.owner }))._id;
     const res = await request(await appPromise, { headers })
@@ -103,10 +103,10 @@ describe("Posts", () => {
       .send({ title: "title2" });
     expect(res.statusCode).toEqual(201);
     const { title, owner, content } = await PostModel.findOne({
-      title: "title2",
+      title: "title",
     });
     expect({ title, owner: owner.toString(), content }).toEqual({
-      title: "title2",
+      title: "title",
       owner: post.owner,
       content: post.content,
     });

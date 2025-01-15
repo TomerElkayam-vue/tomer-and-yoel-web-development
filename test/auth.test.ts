@@ -221,7 +221,7 @@ describe("Auth - Refresh Token", () => {
     );
   });
 
-  test("Refresh Token Failed, Invalid Token", async () => {
+  test("Refresh Token Failed, Wrong Token", async () => {
     const res = await request(await appPromise)
       .post("/auth/refresh-token")
       .set("Authorization", "Bearer invalidToken");
@@ -229,7 +229,7 @@ describe("Auth - Refresh Token", () => {
     expect(res.statusCode).toEqual(403);
   });
 
-  test("Refresh Token Failed, User Not Found", async () => {
+  test("Refresh Token Failed, No User", async () => {
     const invalidUserToken = jwt.sign(
       { _id: "invalidUserId" },
       process.env.REFRESH_TOKEN_SECRET

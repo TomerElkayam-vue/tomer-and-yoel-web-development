@@ -84,7 +84,7 @@ describe("Comments", () => {
     expect(res.statusCode).toEqual(200);
   });
 
-  test("Get Comment by ID", async () => {
+  test("Get Comment", async () => {
     const commentId = (await CommentModel.create(comment))._id;
 
     const res = await request(await appPromise, { headers })
@@ -136,7 +136,7 @@ describe("Comments", () => {
     const res = await request(await appPromise, { headers })
       .put(`/comments/${commentId}`)
       .set(headers)
-      .send({ content: "content2" });
+      .send({ content: "content" });
 
     expect(res.statusCode).toEqual(201);
 

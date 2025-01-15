@@ -3,12 +3,14 @@ import { Post } from "../dtos/post";
 import { PostModel } from "../models/posts_model";
 
 const getAllPosts = async (req: Request, res: Response) => {
-  const postOwner: string = String(req.query.postOwner);
+  const postOwner = req.query.postOwner;
 
   try {
     let posts: Post[];
     if (postOwner) {
-      posts = await PostModel.find({ owner: postOwner }).populate("owner");
+      posts = await PostModel.find({ owner: String(postOwner) }).populate(
+        "owner"
+      );
     } else {
       posts = await PostModel.find().populate("owner");
     }
@@ -36,6 +38,7 @@ const getPostById = async (req: Request, res: Response) => {
 
 const createPost = async (req: Request, res: Response) => {
   const createdPost: Post = req.body;
+  console.log(createdPost);
   try {
     const post: Post = await PostModel.create(createdPost);
     res.send(post);

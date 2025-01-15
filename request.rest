@@ -6,7 +6,7 @@ GET http://localhost:3000/posts
 ###
 
 GET http://localhost:3000/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdkM2JmNWZlMWMyODZmNjI2Mzc2NDEiLCJ1c2VybmFtZSI6InRvbWVyIiwiaWF0IjoxNzM2MjYxMTU5LCJleHAiOjE3MzYyNzU1NTl9.9kjng5k48DuUMpwZsFFkXh2X6suxph0WLGvtk-4MdDg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdkNDhjYjFjMDE4M2VhMjgyZDE0ZjUiLCJ1c2VybmFtZSI6InRvbWVyIiwiaWF0IjoxNzM2OTQ2ODkwLCJleHAiOjE3MzY5NjEyOTB9.rS-OxWPOWkJlmZ7TBk2bqpkWNasHBY9cjtUAJLpbNVk
 
 
 ###
@@ -16,15 +16,16 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdkM2JmN
 ###
 
 POST http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdkNDhjYjFjMDE4M2VhMjgyZDE0ZjUiLCJ1c2VybmFtZSI6InRvbWVyIiwiaWF0IjoxNzM2OTQ2ODkwLCJleHAiOjE3MzY5NjEyOTB9.rS-OxWPOWkJlmZ7TBk2bqpkWNasHBY9cjtUAJLpbNVk
 Content-Type: application/json
 
 {
     "title": "jks",
-    "owner": "675063ff82f983bbbce757e8",
+    "owner": "677d48cb1c0183ea282d14f5",
     "content": "data"
 }
 
-##
+###
 
 PUT http://localhost:3000/posts/674088366365996d79acfdd2
 Content-Type: application/json
