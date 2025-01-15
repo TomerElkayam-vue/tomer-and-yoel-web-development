@@ -5,7 +5,9 @@ GET http://localhost:3000/posts
 
 ###
 
-GET http://localhost:3000/posts?postOwner=675063ff82f983bbbce757e8
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdkNDhjYjFjMDE4M2VhMjgyZDE0ZjUiLCJ1c2VybmFtZSI6InRvbWVyIiwiaWF0IjoxNzM2OTQ2ODkwLCJleHAiOjE3MzY5NjEyOTB9.rS-OxWPOWkJlmZ7TBk2bqpkWNasHBY9cjtUAJLpbNVk
+
 
 ###
 
@@ -14,65 +16,67 @@ GET http://localhost:3000/posts?postOwner=675063ff82f983bbbce757e8
 ###
 
 POST http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzdkNDhjYjFjMDE4M2VhMjgyZDE0ZjUiLCJ1c2VybmFtZSI6InRvbWVyIiwiaWF0IjoxNzM2OTQ2ODkwLCJleHAiOjE3MzY5NjEyOTB9.rS-OxWPOWkJlmZ7TBk2bqpkWNasHBY9cjtUAJLpbNVk
 Content-Type: application/json
 
 {
-    "title": "Amazing Post here",
-    "owner": "675063ff82f983bbbce757e8",
-    "content": "It will surely work"
+    "title": "jks",
+    "owner": "677d48cb1c0183ea282d14f5",
+    "content": "data"
 }
 
 ###
 
-# PUT http://localhost:3000/posts/674088366365996d79acfdd2
-# Content-Type: application/json
+PUT http://localhost:3000/posts/674088366365996d79acfdd2
+Content-Type: application/json
 
-# {
-#     "title": "New and amazing post",
-#     "owner": "tomer22",
-#     "content": "Very good job"
-# }
+{
+    "title": "New and amazing post",
+    "owner": "yoel12",
+    "content": "Very good job"
+}
 
-# ###
+###
 
-# GET http://localhost:3000/comments
+GET http://localhost:3000/comments
 
-# ###
+###
 
-# GET http://localhost:3000/comments?user=yoel
+GET http://localhost:3000/comments/673e252df28ddaed8bbf6a68
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzY3ZDUzM2VhZjY3MzAxZDNmYTIwZGUiLCJ1c2VybmFtZSI6InNoYWNoYXIgc2hlbWVzaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJlbWFpbCI6IjEyMzQ1IiwiaWF0IjoxNzM0ODYyOTI3LCJleHAiOjE3MzQ4NjMyMjd9.8Sc7oOEDL9pK-o4HkaD1SXbNYhpmDtYcidpwrOi7EWY
+ ###
 
-# ###
+GET http://localhost:3000/comments/6740902515e5bdf0e3363dcb
 
-# GET http://localhost:3000/comments/6740902515e5bdf0e3363dcb
+###
 
-# ###
+GET http://localhost:3000/comments/post/674088366365996d79acfdd2
 
-# GET http://localhost:3000/comments/post/674088366365996d79acfdd2
+###
 
-# ###
+POST http://localhost:3000/comments
+Content-Type: application/json
 
-# POST http://localhost:3000/comments
-# Content-Type: application/json
+{
+    "user": "tomer",
+    "content": "blabla",
+    "postId": "674088366365996d79acfdd2"
+}
 
-# {
-#     "user": "yoel2",
-#     "content": "bla bla bla",
-#     "postId": "674088366365996d79acfdd2"
-# }
+###
 
-# ###
+PUT http://localhost:3000/comments/6740902515e5bdf0e3363dcb
+Content-Type: application/json
 
-# PUT http://localhost:3000/comments/6740902515e5bdf0e3363dcb
-# Content-Type: application/json
+{
+    "content": "blablabla"
+}
 
-# {
-#     "content": "content post updating now"
-# }
-
-# ###
+###
 
 GET http://localhost:3000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzUwNzZjYTY0ZGRkMDNkNTM3YjY1ZDIiLCJ1c2VybmFtZSI6InJvbmFydWNoIiwicGFzc3dvcmQiOiIxMjM0NSIsImVtYWlsIjoiMTIzNDUiLCJpYXQiOjE3MzMzMjY5MzIsImV4cCI6MTczMzMyNzIzMn0.TIoX35p7wcMpA5neBfRSf6tKkCH3bKNJJ_3IV-NYhd8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1NTIzOGQ5NzdlMTc3NzdjOTk5NTQiLCJ1c2VybmFtZSI6InJvbjIwIiwiaWF0IjoxNzM1NzQyNTM5LCJleHAiOjE3MzU3NDI4Mzl9.k_seRqi1svhNa3DoBtldIVn-o163dcb3HVyktAiVBhg
+
 
 ###
 
@@ -84,9 +88,9 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-    "username": "tomerelk",
-    "password": "123imking",
-    "email": "tomerelkm@gmail.com"
+    "username": "yoel12",
+    "password": "1234",
+    "email": "yoel12m@gmail.com"
 }
 
 ###
@@ -95,9 +99,9 @@ PUT http://localhost:3000/users/675063b982f983bbbce757e3
 Content-Type: application/json
 
 {
-    "username": "tomerelk",
-    "password": "123imking2",
-    "email": "tomerelkm@gmail.com"
+    "username": "yoel12",
+    "password": "12342",
+    "email": "yoel12m@gmail.com"
 }
 
 ###
@@ -106,9 +110,9 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "username": "joel",
-    "password": "12345",
-    "email": "joel123@gmail.com"
+    "username": "tomer",
+    "password": "123",
+    "email": "tomerelk@gmail.com"
 }
 
 ###
@@ -119,8 +123,24 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "password": "12345",
-    "email": "joel123@gmail.com"
+    "email": "tomerelk@gmail.com",
+    "password": "123"
 }
+
+###
+
+###
+
+POST http://localhost:3000/auth/refresh-token
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1NTIzOGQ5NzdlMTc3NzdjOTk5NTQiLCJ1c2VybmFtZSI6InJvbjIwIiwiaWF0IjoxNzM1NzQyNTM5LCJleHAiOjE3MzU4Mjg5Mzl9.6VeyYXOglLCgHP3fnnDH-GWOBgxbAp_zRt4F-F15g38
+
+###
+
+###
+
+POST http://localhost:3000/auth/logout
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1NTIzOGQ5NzdlMTc3NzdjOTk5NTQiLCJ1c2VybmFtZSI6InJvbjIwIiwiaWF0IjoxNzM1NzQyNTM5LCJleHAiOjE3MzU4Mjg5Mzl9.6VeyYXOglLCgHP3fnnDH-GWOBgxbAp_zRt4F-F15g38
 
 ###
