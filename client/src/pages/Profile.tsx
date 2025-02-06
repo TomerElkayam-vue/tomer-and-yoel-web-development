@@ -1,7 +1,5 @@
-import { useCallback, useEffect, useMemo } from "react";
 import { updateUser } from "../services/users";
 import UserProfile from "../components/UserProfile";
-import { usePostsContext } from "../context/PostsContext";
 import { useUserContext } from "../context/UserContext";
 import { enqueueSnackbar } from "notistack";
 import { PostsList } from "../components/PostsList";
