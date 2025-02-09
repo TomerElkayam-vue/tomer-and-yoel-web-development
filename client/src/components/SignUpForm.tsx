@@ -47,14 +47,14 @@ const SignUpForm = ({ formData, onInputChange }: SignUpFormProps) => {
     try {
       if (isEmpty(errors)) {
         const user = await signup(userData);
+        console.log("user", user);
         setUser?.(user);
         navigate("/");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("error signup user", error);
-      if (error instanceof Error) {
-        setServerError(error.message);
-      }
+
+      setServerError(error?.response?.data?.message ?? "error while sign up");
     }
   };
   return (
