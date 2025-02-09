@@ -47,7 +47,6 @@ const SignUpForm = ({ formData, onInputChange }: SignUpFormProps) => {
     try {
       if (isEmpty(errors)) {
         const user = await signup(userData);
-        console.log("user", user);
         setUser?.(user);
         navigate("/");
       }
