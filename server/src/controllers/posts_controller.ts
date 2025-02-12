@@ -81,7 +81,7 @@ const updatePost = async (req: Request, res: Response) => {
 
     const newPost = await PostModel.findOneAndUpdate(
       { _id: postId },
-      updatePost,
+      updatedPost,
       { new: true }
     ).populate("owner");
 
